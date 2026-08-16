@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Thanks for scrolling">
+  <title>Let's build something</title>
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06090F"/>
+      <stop offset="55%" stop-color="#0A1123"/>
+      <stop offset="100%" stop-color="#05070E"/>
+    </linearGradient>
+    <linearGradient id="w1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#7C4DFF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0B62FF" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0B62FF" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="frule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="fclip"><rect width="1200" height="180" rx="18"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#fclip)">
+    <rect width="1200" height="180" fill="url(#fbg)"/>
+
+    <!-- back wave -->
+    <g opacity="0.85">
+      <path d="M-400 118 C -250 88, -150 148, 0 118 S 250 88, 400 118 S 650 148, 800 118 S 1050 88, 1200 118 S 1450 148, 1600 118 L1600 180 L-400 180 Z" fill="url(#w2)">
+        <animateTransform attributeName="transform" type="translate" values="0 0; -400 0; 0 0" dur="18s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <!-- front wave -->
+    <path d="M-400 132 C -250 108, -150 156, 0 132 S 250 108, 400 132 S 650 156, 800 132 S 1050 108, 1200 132 S 1450 156, 1600 132 L1600 180 L-400 180 Z" fill="url(#w1)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 400 0; 0 0" dur="13s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- floating particles -->
+    <g fill="#00F2FE">
+      <circle cx="180" cy="70" r="2">
+        <animate attributeName="cy" values="70;46;70" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.25;0.9;0.25" dur="7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="420" cy="52" r="1.6">
+        <animate attributeName="cy" values="52;78;52" dur="9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="880" cy="64" r="2.2">
+        <animate attributeName="cy" values="64;40;64" dur="11s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="11s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1050" cy="46" r="1.6">
+        <animate attributeName="cy" values="46;72;46" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.25;0.8" dur="8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <text x="600" y="62" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#E2E8F0">Thanks for scrolling.</text>
+    <text x="600" y="92" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" letter-spacing="1.6" fill="#00F2FE" fill-opacity="0.9">OPEN TO INTERESTING PROBLEMS &#183; AMMAN, JORDAN</text>
+
+    <rect x="330" y="0" width="540" height="2" fill="url(#frule)"/>
+    <rect width="1200" height="180" rx="18" fill="none" stroke="#1C2942" stroke-width="1.5"/>
+  </g>
+</svg>
