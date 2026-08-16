@@ -2,8 +2,17 @@
 
   <!-- ═══════════════════ CUSTOM HERO BANNER ═══════════════════ -->
   <a href="https://mohammadotaqi.com/">
-    <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/header.svg?v=3" width="100%" alt="Mohammad Otaqi - Software Engineer &amp; Mobile Developer" />
+    <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/header.svg?v=4" width="100%" alt="Mohammad Otaqi - Software Engineer &amp; Mobile Developer" />
   </a>
+
+  <br/>
+
+  <!-- ═══════════════════ SPECIALTY TAGS ═══════════════════ -->
+  <img src="https://img.shields.io/badge/🏛️_ZagTrader_.NET_10-0F172A?style=flat-square" />
+  <img src="https://img.shields.io/badge/📱_Flutter_/_BLoC-0F172A?style=flat-square" />
+  <img src="https://img.shields.io/badge/⚡_LiveKit_WebRTC-0F172A?style=flat-square" />
+  <img src="https://img.shields.io/badge/🔒_SWIFT_ISO_15022-0F172A?style=flat-square" />
+  <img src="https://img.shields.io/badge/📍_Amman,_Jordan-0F172A?style=flat-square" />
 
   <br/><br/>
 
@@ -208,5 +217,5 @@
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/footer.svg?v=3" width="100%" alt="Footer Banner" />
+  <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/footer.svg?v=4" width="100%" alt="Footer Banner" />
 </div>
