@@ -23,53 +23,19 @@ B.Sc. Computer Science, Al Hussein Technical University (GPA: Excellent). Based 
 
 ## Selected work
 
-<table>
-  <tr>
-    <td width="50%">
-      <a href="https://n0tmot.com"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-odispear.svg?v=1" width="100%" alt="Odispear — community platform with LiveKit voice and video" /></a>
-    </td>
-    <td width="50%">
-      <a href="https://github.com/Mo-Otaqi/Graduation-Project-MedGuard"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-medguard.svg?v=1" width="100%" alt="MedGuard — BLE vitals monitoring with Gemini AI analysis" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-mot.svg?v=1" width="100%" alt="MOT — gamer social network and LFG matchmaking" /></a>
-    </td>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-masra.svg?v=1" width="100%" alt="Masra — Al-Aqsa education platform" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-sehleh.svg?v=1" width="100%" alt="Sehleh — services marketplace with PostGIS geolocation" /></a>
-    </td>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-sabaq.svg?v=1" width="100%" alt="Sabaq — Quran memorisation app with Whisper recitation grading" /></a>
-    </td>
-  </tr>
-</table>
+<a href="https://n0tmot.com"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-odispear.svg?v=2" width="100%" alt="01 — Odispear: Discord-style community platform with LiveKit voice and video" /></a>
+<a href="https://github.com/Mo-Otaqi/Graduation-Project-MedGuard"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-medguard.svg?v=2" width="100%" alt="02 — MedGuard: BLE GATT vitals streamed to Firestore and analysed by Gemini" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-mot.svg?v=2" width="100%" alt="03 — MOT: gamer social network and LFG matchmaking" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-masra.svg?v=2" width="100%" alt="04 — Masra: Al-Aqsa education platform, offline-first and bilingual" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-sehleh.svg?v=2" width="100%" alt="05 — Sehleh: services marketplace with PostGIS geolocation" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-sabaq.svg?v=2" width="100%" alt="06 — Sabaq: Quran memorisation with Whisper recitation grading" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-tabayyun.svg?v=2" width="100%" alt="07 — Tabayyun: Arabic news credibility scorer, 7th place at Tech 3arabi" /></a>
 
-## Capital markets &amp; systems
+## At ZagTrader
 
-<table>
-  <tr>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-swift.svg?v=1" width="100%" alt="SWIFT Suite — ISO 15022 securities settlement platform" /></a>
-    </td>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-fixportal.svg?v=1" width="100%" alt="FixPortal — FIX protocol administration and validation portal" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-zagkeygen.svg?v=1" width="100%" alt="ZagKeyGenWeb — hardware-bound software licensing engine" /></a>
-    </td>
-    <td width="50%">
-      <a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/card-tabayyun.svg?v=1" width="100%" alt="Tabayyun — Arabic news credibility scorer" /></a>
-    </td>
-  </tr>
-</table>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-swift.svg?v=2" width="100%" alt="08 — SWIFT Suite: ISO 15022 securities settlement platform" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-fixportal.svg?v=2" width="100%" alt="09 — FixPortal: FIX protocol administration and validation portal" /></a>
+<a href="https://mohammadotaqi.com/"><img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/row-zagkeygen.svg?v=2" width="100%" alt="10 — ZagKeyGenWeb: hardware-bound software licensing engine" /></a>
 
 ## Activity
 
@@ -85,7 +51,7 @@ B.Sc. Computer Science, Al Hussein Technical University (GPA: Excellent). Based 
 
 <br />
 
-<details>
+<details open>
 <summary><b>Full stack &amp; tooling</b></summary>
 <br />
 
@@ -103,7 +69,7 @@ B.Sc. Computer Science, Al Hussein Technical University (GPA: Excellent). Based 
 
 </details>
 
-<details>
+<details open>
 <summary><b>Honors, awards &amp; verified certifications</b></summary>
 <br />
 
@@ -119,7 +85,7 @@ B.Sc. Computer Science, Al Hussein Technical University (GPA: Excellent). Based 
 
 </details>
 
-<details>
+<details open>
 <summary><b>How this profile is built</b></summary>
 <br />
 
@@ -130,7 +96,7 @@ README widgets, so nothing here can rate-limit, 404, or quietly go blank.
 | --- | --- |
 | `assets/hero.svg` | Animated hero — drifting light, orbital system, typed role line (SMIL) |
 | `assets/marquee.svg` | Seamless dual-direction stack marquee with edge fade masks |
-| `assets/card-*.svg` | Project cards with per-card accent, glyph and sweeping sheen |
+| `assets/row-*.svg` | Selected-work rows — ghost index numeral, hairline rules, monospace stack line |
 | `assets/stats.svg` | Contribution heatmap + stat tiles, rendered from the GitHub GraphQL API |
 | `assets/footer.svg` | Animated wave footer |
 | `scripts/build_stats.py` | Renders `stats.svg`; run by `.github/workflows/stats.yml` |

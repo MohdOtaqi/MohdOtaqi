@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 172" width="1000" height="172" role="img" aria-label="Sabaq — Gesture-driven Mushaf reader with AI recitation grading — Whisper STT fuzzy-matched against riwaya text. I owned the Django/DRF backend.">
+  <title>Sabaq</title>
+  <defs>
+    <linearGradient id="sweep5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="rc5"><rect width="1000" height="172" rx="5"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#rc5)">
+    <rect width="1000" height="172" fill="#080C14"/>
+
+    <!-- ghost mark, bleeding off the right edge -->
+    <g transform="translate(886 40) scale(3.0)" fill="none" stroke="#00F2FE" stroke-opacity="0.075"
+       stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M2 6c6-2.4 12-2.4 18 1.2v28.8c-6-3.6-12-3.6-18-1.2z"/><path d="M38 6c-6-2.4-12-2.4-18 1.2v28.8c6-3.6 12-3.6 18-1.2z"/><path d="M20 7v29"/></g>
+
+    <!-- left rule, draws in -->
+    <rect x="0" y="0" width="3" height="0" fill="#00F2FE" fill-opacity="0.85">
+      <animate attributeName="height" from="0" to="172" dur="0.7s" begin="0.60s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1"/>
+    </rect>
+
+    <!-- ghost index numeral -->
+    <text x="34" y="66" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="40" font-weight="700" fill="#1B2739">06</text>
+
+    <text x="118" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="29" font-weight="700" letter-spacing="-0.2" fill="#EEF3F9">Sabaq</text>
+
+    <g transform="translate(889.6 30)">
+      <rect width="76.4" height="23" rx="3" fill="none" stroke="#00F2FE" stroke-opacity="0.4"/>
+      
+      <text x="38.2" y="16" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.3" fill="#00F2FE" fill-opacity="0.95">SOURCE</text>
+    </g>
+
+    
+
+    <text x="118" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18.0" fill="#8496AD">Gesture-driven Mushaf reader with AI recitation grading — Whisper STT</text><text x="118" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18.0" fill="#8496AD">fuzzy-matched against riwaya text. I owned the Django/DRF backend.</text>
+
+    <line x1="118" y1="132" x2="966" y2="132" stroke="#141E2C"/>
+    <text x="118" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14.5" fill="#5E7188">React Native · Expo · Django / DRF · Whisper</text>
+
+    <!-- slow sweep along the baseline: one moving accent, no glow -->
+    <rect x="-200" y="170.5" width="200" height="1.5" fill="url(#sweep5)">
+      <animate attributeName="x" values="-200;1000" dur="6s" begin="5.5s" repeatCount="indefinite"/>
+    </rect>
+    <line x1="0" y1="171.25" x2="1000" y2="171.25" stroke="#131C2B" stroke-width="1.5"/>
+  </g>
+</svg>
