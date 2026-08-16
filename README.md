@@ -17,21 +17,46 @@
 
 ### 👨‍💻 About Me
 
-```yaml
-profile:
-  name: Mohammad Otaqi
-  location: Amman, Jordan 🇯🇴
-  education: B.Sc. in Computer Science — Al Hussein Technical University (GPA: Excellent)
-  roles:
-    - Software Engineer at ZagTrader (Capital Markets & Post-Trade Infrastructure)
-    - Mobile & Cross-Platform Developer (Flutter, React Native, iOS & Android)
-    - Full-Stack Product Builder (React, Next.js, Node.js, PostgreSQL, WebRTC)
-```
+> **Software Engineer** specializing in **Fintech & Capital Markets Infrastructure** and **Cross-Platform Mobile Development (Flutter & React Native)**. Proven in delivering high-throughput messaging pipelines, low-latency audio/video platforms, and scalable consumer apps.
 
-- 📱 **Mobile & Cross-Platform Development**: Built multiple production-grade mobile applications with **Flutter** and **React Native** utilizing **BLoC**, **Riverpod**, and **Provider** state patterns, **BLE (Bluetooth Low Energy)** sensor integration, **FCM push notifications**, offline-first caching, and in-app subscriptions via **RevenueCat**.
-- 🏛️ **Fintech & Capital Markets**: Engineered high-throughput post-trade settlement pipelines (SWIFT ISO 15022 MT540–MT564), FIX message engines, and cryptographic hardware-bound licensing in **C# / .NET 10**, **ASP.NET Core**, **SignalR**, and **React**.
-- ⚡ **Real-Time & Media Systems**: Built low-latency voice/video streaming (WebRTC / LiveKit) with AI noise suppression (RNNoise), live WebSocket feeds, and geospatial marketplaces with PostGIS.
-- 🏆 **Hackathons & Recognition**: Top 24 Finalist at **Ahli Fintech Hackathon (2025)** • 7th Place at **Tech 3arabi Hackathon (2025)** • **GDVC Best Member Award (2024)**.
+<br/>
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏛️ Fintech & Capital Markets</h3>
+      <p>Building mission-critical post-trade settlement infrastructure (<b>SWIFT ISO 15022 MT540–MT564</b>), <b>FIX protocol</b> engines with custom tag dictionaries, and hardware-bound crypto licensing at <b>ZagTrader</b>.</p>
+      <p>
+        <code>C#</code> <code>.NET 10</code> <code>ASP.NET Core</code> <code>SignalR</code> <code>React</code> <code>SQL Server</code> <code>IKVM</code>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📱 Mobile & Cross-Platform</h3>
+      <p>Shipping production-grade cross-platform apps with <b>BLoC</b>, <b>Riverpod</b>, <b>BLE (Bluetooth GATT)</b> sensor pipelines, offline-first caching, FCM notifications, and subscriptions via <b>RevenueCat</b>.</p>
+      <p>
+        <code>Flutter</code> <code>Dart</code> <code>React Native</code> <code>Firebase</code> <code>BLE</code> <code>RevenueCat</code>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>⚡ Real-Time & Media Systems</h3>
+      <p>Architecting low-latency audio/video platforms with <b>LiveKit (WebRTC)</b>, RNNoise audio filtering, WebSocket streaming, and geolocation marketplaces with <b>PostGIS</b> spatial queries.</p>
+      <p>
+        <code>WebRTC</code> <code>LiveKit</code> <code>Socket.IO</code> <code>PostgreSQL</code> <code>AWS RDS/EC2</code>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🎓 Education & Honors</h3>
+      <ul>
+        <li>🎓 <b>B.Sc. in Computer Science</b> — <i>HTU (GPA: Excellent)</i></li>
+        <li>🏅 <b>Top 24 Finalist</b> — <i>Ahli Fintech Hackathon (2025)</i></li>
+        <li>🏅 <b>7th Place</b> — <i>Tech 3arabi Hackathon (2025)</i></li>
+        <li>🌟 <b>Best Member Award</b> — <i>GDVC (2024)</i></li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -93,16 +118,6 @@ profile:
 | **FixPortal** | FIX protocol administration & validation portal parsing 150+ tag dictionaries with per-market rules and live message diffing. | `ASP.NET Core` `EF Core` `React` `JWT` | ZagTrader |
 | **ZagKeyGenWeb** | Hardware-bound software licensing engine using TripleDES, HMAC-SHA256 integrity, and PBKDF2 tamper protection. | `ASP.NET Core` `Cryptography` `AES-256` | ZagTrader |
 | **Tabayyun** | Arabic-first news credibility and image forensics verifier with LLM sentiment analysis, EXIF forensics, and Sightengine AI detection. | `React 19` `Vite` `OpenAI` `Sightengine` `Tailwind` | Tech 3arabi Finalist |
-
----
-
-### 🏆 Honors & Hackathons
-
-- 🏅 **Top 24 Finalist** — *Ahli Fintech Hackathon (2025)*
-- 🏅 **7th Place** — *Tech 3arabi Hackathon (2025)*
-- 🌟 **Best Member Award** — *Google Developer Student Club / GDVC (2024)*
-- 🎓 **Bachelor in Computer Science (GPA: Excellent)** — *Al Hussein Technical University (2021–2025)*
-- 📜 **Google Certified** — *IT Support & Project Management Professional*
 
 ---
 
