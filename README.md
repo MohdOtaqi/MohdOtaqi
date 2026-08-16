@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- ═══════════════════ CUSTOM HERO BANNER ═══════════════════ -->
-  <a href="https://n0tmot.com">
+  <a href="https://mohammadotaqi.com/">
     <img src="./header.svg" width="100%" alt="Mohammad Otaqi - Software Engineer &amp; Mobile Developer" />
   </a>
 
@@ -10,7 +10,7 @@
   <!-- ═══════════════════ SOCIAL & QUICK LINKS ═══════════════════ -->
   <a href="https://jo.linkedin.com/in/mohammad-otaqi-ba5a17257"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;&nbsp;
   <a href="mailto:otaqi.mohammad11@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>&nbsp;&nbsp;
-  <a href="https://n0tmot.com"><img src="https://img.shields.io/badge/Live_Portfolio-00F2FE?style=for-the-badge&logo=googlechrome&logoColor=0D1117" alt="Portfolio" /></a>&nbsp;&nbsp;
+  <a href="https://mohammadotaqi.com/"><img src="https://img.shields.io/badge/Live_Portfolio-00F2FE?style=for-the-badge&logo=googlechrome&logoColor=0D1117" alt="Portfolio" /></a>&nbsp;&nbsp;
   <a href="https://github.com/MohdOtaqi?tab=repositories"><img src="https://img.shields.io/badge/Repositories-12%2B-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositories" /></a>
 
   <br/><br/>
