@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07090E" />
+      <stop offset="50%" stop-color="#0D131F" />
+      <stop offset="100%" stop-color="#080C14" />
+    </linearGradient>
+
+    <!-- Glowing Cyan Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C6FF" />
+      <stop offset="50%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+
+    <!-- Text Fill Gradient -->
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#F0F8FF" />
+      <stop offset="100%" stop-color="#00F2FE" />
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0" />
+      <stop offset="30%" stop-color="#00F2FE" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#4FACFE" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Ambient Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="badgeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, Helvetica, sans-serif;
+      font-weight: 900;
+      font-size: 48px;
+      letter-spacing: 2px;
+      fill: url(#nameGrad);
+    }
+    .badge-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', Roboto, monospace;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      fill: #00F2FE;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', Roboto, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      fill: #94A3B8;
+    }
+    .tag-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', Roboto, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      fill: #CBD5E1;
+    }
+    .accent-dot {
+      fill: #00F2FE;
+    }
+  </style>
+
+  <!-- Background Base with Rounded Corners -->
+  <rect width="1000" height="240" rx="16" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Ambient Color Glow Orbs -->
+  <circle cx="150" cy="40" r="90" fill="#0052CC" opacity="0.25" filter="url(#glow)" />
+  <circle cx="850" cy="180" r="100" fill="#00F2FE" opacity="0.20" filter="url(#glow)" />
+  <circle cx="500" cy="220" r="80" fill="#4FACFE" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Top Accent Light Bar -->
+  <rect x="150" y="0" width="700" height="2" fill="url(#borderGrad)" />
+
+  <!-- Content Container -->
+  <g transform="translate(50, 0)">
+    <!-- Top Pill Badge -->
+    <g transform="translate(0, 36)">
+      <rect x="0" y="0" width="370" height="26" rx="13" fill="#0F172A" stroke="#00F2FE" stroke-opacity="0.4" stroke-width="1" />
+      <circle cx="16" cy="13" r="4" fill="#00F2FE" />
+      <text x="30" y="17" class="badge-text">SOFTWARE &amp; MOBILE ENGINEER</text>
+    </g>
+
+    <!-- Main Name Title -->
+    <text x="0" y="112" class="title-text">MOHAMMAD OTAQI</text>
+
+    <!-- Subtitle Description -->
+    <text x="0" y="148" class="subtitle-text">
+      Fintech &amp; Capital Markets Infrastructure <tspan fill="#00F2FE">•</tspan> Flutter &amp; Mobile Apps <tspan fill="#00F2FE">•</tspan> Real-Time Systems
+    </text>
+
+    <!-- Bottom Feature Tags Row -->
+    <g transform="translate(0, 185)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="135" height="26" rx="6" fill="#111827" stroke="#334155" stroke-width="1" />
+      <text x="12" y="17" class="tag-text">🏛️ ZagTrader .NET</text>
+
+      <!-- Tag 2 -->
+      <rect x="145" y="0" width="125" height="26" rx="6" fill="#111827" stroke="#334155" stroke-width="1" />
+      <text x="12" y="17" class="tag-text">📱 Flutter / BLoC</text>
+
+      <!-- Tag 3 -->
+      <rect x="280" y="0" width="135" height="26" rx="6" fill="#111827" stroke="#334155" stroke-width="1" />
+      <text x="12" y="17" class="tag-text">⚡ LiveKit WebRTC</text>
+
+      <!-- Tag 4 -->
+      <rect x="425" y="0" width="145" height="26" rx="6" fill="#111827" stroke="#334155" stroke-width="1" />
+      <text x="12" y="17" class="tag-text">🔒 SWIFT ISO 15022</text>
+
+      <!-- Tag 5 -->
+      <rect x="580" y="0" width="130" height="26" rx="6" fill="#111827" stroke="#334155" stroke-width="1" />
+      <text x="12" y="17" class="tag-text">📍 Amman, Jordan</text>
+    </g>
+  </g>
+
+  <!-- Right Decorative Geometric Tech Rings -->
+  <g transform="translate(860, 110)" opacity="0.65">
+    <circle cx="0" cy="0" r="65" fill="none" stroke="#1E293B" stroke-dasharray="6,6" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#00F2FE" stroke-opacity="0.3" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="30" fill="#00F2FE" fill-opacity="0.08" stroke="#00F2FE" stroke-opacity="0.6" stroke-width="1.5" />
+    <!-- Center Tech Symbol -->
+    <path d="M-8,-8 L8,8 M8,-8 L-8,8" stroke="#00F2FE" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Bottom Accent Highlight -->
+  <rect x="250" y="238" width="500" height="2" fill="url(#borderGrad)" />
+</svg>
