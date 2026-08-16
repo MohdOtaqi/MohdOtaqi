@@ -22,11 +22,6 @@
   <a href="https://mohammadotaqi.com/"><img src="https://img.shields.io/badge/Live_Portfolio-00F2FE?style=for-the-badge&logo=googlechrome&logoColor=0D1117" alt="Portfolio" /></a>&nbsp;&nbsp;
   <a href="https://github.com/MohdOtaqi?tab=repositories"><img src="https://img.shields.io/badge/Repositories-12%2B-181717?style=for-the-badge&logo=github&logoColor=white" alt="Repositories" /></a>
 
-  <br/><br/>
-
-  <!-- ═══════════════════ GITHUB TROPHIES ═══════════════════ -->
-  <img src="https://github-trophies.vercel.app/?username=MohdOtaqi&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=6" width="92%" alt="GitHub Trophies" />
-
 </div>
 
 <br/>
