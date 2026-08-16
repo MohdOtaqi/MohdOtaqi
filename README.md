@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0077b6,100:00f2fe&height=220&section=header&text=Mohammad%20Otaqi&fontSize=44&fontColor=ffffff&fontAlignY=36&desc=Software%20Engineer%20•%20Mobile%20%26%20Flutter%20Developer%20•%20Fintech%20Systems&descAlignY=58&descAlign=50" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0077b6,100:00f2fe&height=220&section=header&text=Mohammad%20Otaqi&fontSize=44&fontColor=ffffff&fontAlignY=36&desc=Software%20Engineer%20•%20Mobile%20%2B%20Flutter%20Developer%20•%20Fintech%20Systems&descAlignY=58&descAlign=50" width="100%"/>
 
   <!-- Social Badges -->
   <p align="center">
@@ -61,7 +61,7 @@ profile:
   <!-- Backend & Systems Badges -->
   <p><strong>⚙️ Backend, Fintech & Cloud Infrastructure</strong></p>
   <img src="https://img.shields.io/badge/SWIFT-ISO_15022_·_MT540--564-005A9C?style=flat-square" alt="SWIFT" />
-  <img src="https://img.shields.io/badge/FIX_Protocol-Engine_&_Tag_Dictionary-orange?style=flat-square" alt="FIX" />
+  <img src="https://img.shields.io/badge/FIX_Protocol-Engine_·_Tag_Dictionary-orange?style=flat-square" alt="FIX" />
   <img src="https://img.shields.io/badge/ASP.NET_Core-.NET_10-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="ASP.NET Core" />
   <img src="https://img.shields.io/badge/Real--Time-SignalR_·_LiveKit_·_Socket.IO-00D2FF?style=flat-square&logoColor=black" alt="Realtime" />
   <img src="https://img.shields.io/badge/Spatial-PostGIS_Geolocation-336791?style=flat-square" alt="PostGIS" />
