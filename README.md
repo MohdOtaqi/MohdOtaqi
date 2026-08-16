@@ -175,26 +175,50 @@
 
 ---
 
-## 🏆 Honors & Hackathons
+## 🏆 Honors, Awards & Verified Certifications
 
 <table>
   <tr>
+    <td align="center" width="8%">📜</td>
+    <td width="42%">
+      <b>Google IT Support Professional</b><br/>
+      <sub>Issued by Google • <a href="https://coursera.org/share/eafa794004737f43ff9cf879c8961b11"><b>Verify on Coursera ↗</b></a></sub>
+    </td>
+    <td align="center" width="8%">📜</td>
+    <td width="42%">
+      <b>Google Project Management Professional</b><br/>
+      <sub>Issued by Google • <a href="https://coursera.org/share/711117b513e3ac3db210cc758f9386af"><b>Verify on Coursera ↗</b></a></sub>
+    </td>
+  </tr>
+  <tr>
     <td align="center">🏅</td>
-    <td><b>Top 24 Finalist</b> — Ahli Fintech Hackathon (2025)</td>
+    <td>
+      <b>Top 24 Finalist</b> — Ahli Fintech Hackathon (2025)<br/>
+      <sub>Capital markets &amp; fintech innovation</sub>
+    </td>
     <td align="center">🏅</td>
-    <td><b>7th Place</b> — Tech 3arabi Hackathon (2025)</td>
+    <td>
+      <b>7th Place</b> — Tech 3arabi Hackathon (2025)<br/>
+      <sub>Engineered <i>Tabayyun</i> news forensics engine</sub>
+    </td>
   </tr>
   <tr>
     <td align="center">🌟</td>
-    <td><b>Best Member Award</b> — Google Developer Student Club / GDVC (2024)</td>
+    <td>
+      <b>Best Member Award</b> — GDSC / GDVC (2024)<br/>
+      <sub>Google Developer Student Clubs leadership</sub>
+    </td>
     <td align="center">🎮</td>
-    <td><b>Esports IT Staff &amp; Referee</b> — Jordan Esports Federation (JEF)</td>
+    <td>
+      <b>Esports IT Staff &amp; Referee</b> — JEF<br/>
+      <sub>Jordan Esports Federation tournament infrastructure</sub>
+    </td>
   </tr>
   <tr>
     <td align="center">🎓</td>
-    <td><b>B.Sc. in Computer Science (GPA: Excellent)</b> — HTU (2021–2025)</td>
-    <td align="center">📜</td>
-    <td><b>Google Certified</b> — IT Support &amp; Project Management Professional</td>
+    <td colspan="3">
+      <b>B.Sc. in Computer Science (GPA: Excellent)</b> — Al Hussein Technical University (HTU, 2021–2025)
+    </td>
   </tr>
 </table>
 
