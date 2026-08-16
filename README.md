@@ -2,7 +2,7 @@
 
   <!-- ═══════════════════ CUSTOM HERO BANNER ═══════════════════ -->
   <a href="https://mohammadotaqi.com/">
-    <img src="./header.svg" width="100%" alt="Mohammad Otaqi - Software Engineer &amp; Mobile Developer" />
+    <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/header.svg?v=3" width="100%" alt="Mohammad Otaqi - Software Engineer &amp; Mobile Developer" />
   </a>
 
   <br/><br/>
@@ -208,5 +208,5 @@
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <div align="center">
-  <img src="./footer.svg" width="100%" alt="Footer Banner" />
+  <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/footer.svg?v=3" width="100%" alt="Footer Banner" />
 </div>
