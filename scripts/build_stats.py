@@ -1,61 +1,82 @@
-"""Render assets/stats.svg from live GitHub data.
+"""Render assets/stats.svg from GitHub's public contribution calendar.
 
-Self-hosted replacement for third-party README widgets: pulls the contribution
-calendar via GraphQL and draws an animated heatmap + stat tiles. Run by
-.github/workflows/stats.yml on a schedule.
+Self-hosted replacement for third-party README widgets. Reads
+https://github.com/users/<login>/contributions — the same HTML that backs the
+graph on the profile page. That endpoint needs no authentication and already
+includes private-repo contributions (they show publicly because "include
+private contributions on my profile" is enabled), so this runs on a bare
+GitHub Actions runner with no PAT and no secrets.
+
+Shading uses GitHub's own data-level values, so the heatmap matches the real
+graph rather than re-deriving its own thresholds.
+
+Run by .github/workflows/stats.yml.
 """
 
 import datetime as dt
-import json
 import os
+import re
 import urllib.request
 
 LOGIN = os.environ.get("GH_LOGIN", "MohdOtaqi")
-TOKEN = os.environ["GH_TOKEN"]
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "stats.svg")
 
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
 MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 LEVELS = ["#0E1726", "#0D5A6E", "#009CB6", "#00CFE8", "#00F2FE"]
 
-QUERY = """
-query($login: String!) {
-  user(login: $login) {
-    repositories(ownerAffiliations: OWNER, isFork: false) { totalCount }
-    contributionsCollection {
-      totalCommitContributions
-      totalPullRequestContributions
-      totalIssueContributions
-      restrictedContributionsCount
-      contributionCalendar {
-        totalContributions
-        weeks { contributionDays { date contributionCount weekday } }
-      }
-    }
-  }
-}
-"""
+CELL_RE = re.compile(r'<td\b[^>]*class="ContributionCalendar-day"[^>]*>', re.I)
+TIP_RE = re.compile(r'<tool-tip\b[^>]*\bfor="(contribution-day-component-[\d-]+)"[^>]*>(.*?)</tool-tip>', re.I | re.S)
+TOTAL_RE = re.compile(r'([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year', re.I)
 
 
-def fetch():
+def attr(tag, name):
+    m = re.search(r'\b%s="([^"]*)"' % name, tag)
+    return m.group(1) if m else None
+
+
+def fetch(login):
     req = urllib.request.Request(
-        "https://api.github.com/graphql",
-        data=json.dumps({"query": QUERY, "variables": {"login": LOGIN}}).encode(),
-        headers={"Authorization": f"bearer {TOKEN}", "Content-Type": "application/json",
-                 "User-Agent": "mohdotaqi-profile-stats"},
+        f"https://github.com/users/{login}/contributions",
+        headers={"User-Agent": "mohdotaqi-profile-stats", "Accept": "text/html"},
     )
-    with urllib.request.urlopen(req) as r:
-        body = json.load(r)
-    if "errors" in body:
-        raise SystemExit(f"GraphQL error: {body['errors']}")
-    return body["data"]["user"]
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def parse(html):
+    counts = {}
+    for cid, text in TIP_RE.findall(html):
+        m = re.match(r"\s*([\d,]+)\s+contribution", text.strip())
+        counts[cid] = int(m.group(1).replace(",", "")) if m else 0
+
+    days = []
+    for tag in CELL_RE.findall(html):
+        date, cid = attr(tag, "data-date"), attr(tag, "id")
+        if not date or not cid:
+            continue
+        wd, wk = cid.rsplit("-", 2)[-2:]
+        days.append({
+            "date": date,
+            "level": int(attr(tag, "data-level") or 0),
+            "count": counts.get(cid, 0),
+            "weekday": int(wd),
+            "week": int(wk),
+        })
+    if not days:
+        raise SystemExit("no contribution cells found — GitHub markup may have changed")
+
+    days.sort(key=lambda d: d["date"])
+    m = TOTAL_RE.search(html)
+    total = int(m.group(1).replace(",", "")) if m else sum(d["count"] for d in days)
+    return days, total
 
 
 def streaks(days):
-    """(current, longest) over the returned calendar window."""
+    """(current, longest). Today is skipped rather than breaking a live streak."""
     longest = run = 0
     for d in days:
-        run = run + 1 if d["contributionCount"] > 0 else 0
+        run = run + 1 if d["count"] > 0 else 0
         longest = max(longest, run)
 
     today = dt.date.today().isoformat()
@@ -63,7 +84,7 @@ def streaks(days):
     for d in reversed(days):
         if d["date"] > today:
             continue
-        if d["contributionCount"] > 0:
+        if d["count"] > 0:
             cur += 1
         elif d["date"] == today:
             continue          # today may simply not have happened yet
@@ -72,36 +93,19 @@ def streaks(days):
     return cur, longest
 
 
-def thresholds(days):
-    """Quartile cut points over active days, the way GitHub shades its own grid."""
-    active = sorted(d["contributionCount"] for d in days if d["contributionCount"] > 0)
-    if not active:
-        return [1, 2, 3]
-    return [active[int(len(active) * q)] for q in (0.25, 0.55, 0.80)]
+def build(days, total):
+    weeks = {}
+    for d in days:
+        weeks.setdefault(d["week"], []).append(d)
+    week_keys = sorted(weeks)
 
-
-def level(n, cuts):
-    if n <= 0:
-        return 0
-    return 1 if n <= cuts[0] else 2 if n <= cuts[1] else 3 if n <= cuts[2] else 4
-
-
-def build(user):
-    cc = user["contributionsCollection"]
-    cal = cc["contributionCalendar"]
-    weeks = cal["weeks"]
-    days = [d for w in weeks for d in w["contributionDays"]]
-    cuts = thresholds(days)
     cur, longest = streaks(days)
-
-    total = cal["totalContributions"]
-    commits = cc["totalCommitContributions"] + cc["restrictedContributionsCount"]
-    repos = user["repositories"]["totalCount"]
+    active = sum(1 for d in days if d["count"] > 0)
 
     W, H = 1200, 392
     CELL, GAP = 13, 3.4
     step = CELL + GAP
-    grid_w = len(weeks) * step - GAP
+    grid_w = len(week_keys) * step - GAP
     gx = (W - grid_w) / 2
     gy = 214
 
@@ -109,7 +113,7 @@ def build(user):
         (f"{total:,}", "CONTRIBUTIONS / YEAR", "#00F2FE"),
         (f"{cur}", "CURRENT STREAK (DAYS)", "#7C4DFF"),
         (f"{longest}", "LONGEST STREAK (DAYS)", "#34D399"),
-        (f"{repos}", "REPOSITORIES OWNED", "#FBBF24"),
+        (f"{active}", "ACTIVE DAYS / YEAR", "#FBBF24"),
     ]
 
     tw, tgap, tx0 = 276.0, 12.0, 32.0
@@ -129,37 +133,38 @@ def build(user):
     </g>''')
 
     cells = []
-    for wi, week in enumerate(weeks):
-        col_delay = 0.55 + wi * 0.014
+    for col_i, wk in enumerate(week_keys):
         inner = []
-        for d in week["contributionDays"]:
+        for d in weeks[wk]:
             y = d["weekday"] * step
-            lv = level(d["contributionCount"], cuts)
             extra = ''
-            if lv == 4:
-                extra = f'<animate attributeName="opacity" values="1;0.62;1" dur="3.6s" begin="{(wi % 7) * 0.4:.1f}s" repeatCount="indefinite"/>'
-            inner.append(
-                f'<rect y="{y:.1f}" width="{CELL}" height="{CELL}" rx="3" fill="{LEVELS[lv]}">{extra}</rect>')
+            if d["level"] == 4:
+                extra = (f'<animate attributeName="opacity" values="1;0.62;1" dur="3.6s" '
+                         f'begin="{(col_i % 7) * 0.4:.1f}s" repeatCount="indefinite"/>')
+            inner.append(f'<rect y="{y:.1f}" width="{CELL}" height="{CELL}" rx="3" '
+                         f'fill="{LEVELS[d["level"]]}">{extra}</rect>')
         cells.append(
-            f'<g transform="translate({wi * step:.1f} 0)" opacity="0">'
-            f'<animate attributeName="opacity" from="0" to="1" dur="0.45s" begin="{col_delay:.2f}s" fill="freeze"/>'
+            f'<g transform="translate({col_i * step:.1f} 0)" opacity="0">'
+            f'<animate attributeName="opacity" from="0" to="1" dur="0.45s" '
+            f'begin="{0.55 + col_i * 0.014:.2f}s" fill="freeze"/>'
             f'{"".join(inner)}</g>')
 
     months, seen = [], set()
-    for wi, week in enumerate(weeks):
-        first = week["contributionDays"][0]["date"]
-        d = dt.date.fromisoformat(first)
+    for col_i, wk in enumerate(week_keys):
+        d = dt.date.fromisoformat(weeks[wk][0]["date"])
         key = (d.year, d.month)
         if d.day <= 7 and key not in seen:
             seen.add(key)
             months.append(
-                f'<text x="{wi * step:.1f}" y="-10" font-family="{MONO}" font-size="10.5" '
+                f'<text x="{col_i * step:.1f}" y="-10" font-family="{MONO}" font-size="10.5" '
                 f'letter-spacing="1.2" fill="#4C5B72">{d.strftime("%b").upper()}</text>')
 
     legend_x = W - 32 - 180
     legend = "".join(
         f'<rect x="{legend_x + 58 + i * 17:.1f}" y="{H - 34}" width="12" height="12" rx="3" fill="{c}"/>'
         for i, c in enumerate(LEVELS))
+
+    span = f'{dt.date.fromisoformat(days[0]["date"]).strftime("%b %Y").upper()} &#8594; {dt.date.fromisoformat(days[-1]["date"]).strftime("%b %Y").upper()}'
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="GitHub activity: {total} contributions in the last year">
   <title>GitHub activity</title>
@@ -181,7 +186,7 @@ def build(user):
 {"".join(tile_svg)}
 
     <rect x="32" y="{gy - 62}" width="{W - 64}" height="1" fill="#16223A"/>
-    <text x="32" y="{gy - 38}" font-family="{MONO}" font-size="11.5" letter-spacing="2" fill="#5B6C86">CONTRIBUTION ACTIVITY &#183; LAST 12 MONTHS &#183; {commits:,} COMMITS</text>
+    <text x="32" y="{gy - 38}" font-family="{MONO}" font-size="11.5" letter-spacing="2" fill="#5B6C86">CONTRIBUTION ACTIVITY &#183; {span}</text>
 
     <g transform="translate({gx:.1f} {gy})">
       {"".join(months)}
@@ -199,8 +204,9 @@ def build(user):
 
 
 if __name__ == "__main__":
-    svg = build(fetch())
+    days, total = parse(fetch(LOGIN))
+    svg = build(days, total)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg)
-    print(f"wrote {OUT} ({len(svg)} bytes)")
+    print(f"wrote {OUT}: {len(days)} days, {total:,} contributions, {len(svg)} bytes")

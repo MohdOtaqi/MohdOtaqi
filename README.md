@@ -40,7 +40,7 @@ B.Sc. Computer Science, Al Hussein Technical University (GPA: Excellent). Based 
 ## Activity
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/stats.svg?v=1" width="100%" alt="Contribution activity" />
+  <img src="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/main/assets/stats.svg?v=2" width="100%" alt="Contribution activity" />
   <br /><br />
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MohdOtaqi/MohdOtaqi/output/snake-dark.svg" />
@@ -97,14 +97,15 @@ README widgets, so nothing here can rate-limit, 404, or quietly go blank.
 | `assets/hero.svg` | Animated hero — drifting light, orbital system, typed role line (SMIL) |
 | `assets/marquee.svg` | Seamless dual-direction stack marquee with edge fade masks |
 | `assets/row-*.svg` | Selected-work rows — ghost index numeral, hairline rules, monospace stack line |
-| `assets/stats.svg` | Contribution heatmap + stat tiles, rendered from the GitHub GraphQL API |
+| `assets/stats.svg` | Contribution heatmap + stat tiles, rendered from GitHub's public calendar |
 | `assets/footer.svg` | Animated wave footer |
 | `scripts/build_stats.py` | Renders `stats.svg`; run by `.github/workflows/stats.yml` |
 | `.github/workflows/snake.yml` | Regenerates the contribution snake every 12h to the `output` branch |
 
-To let the stats workflow see private-repo contributions, add a repo secret
-`STATS_TOKEN` holding a classic PAT with `read:user`. Without it the workflow
-no-ops rather than publishing undercounted numbers.
+Both workflows run entirely on GitHub's free Actions runners — no secrets, no
+PAT, no machine of mine has to be switched on. The stats builder reads the same
+public contribution calendar the profile page uses, so private-repo
+contributions are included without any token at all.
 
 </details>
 

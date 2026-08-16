@@ -1,12 +1,10 @@
 name: stats
 
-# Regenerates assets/stats.svg (contribution heatmap + tiles) from live data.
+# Regenerates assets/stats.svg (contribution heatmap + stat tiles) daily.
 #
-# Requires a repo secret named STATS_TOKEN: a classic PAT with `read:user`.
-# The default GITHUB_TOKEN is a bot identity and cannot see private-repo
-# contribution counts, so without STATS_TOKEN this workflow no-ops and the
-# committed stats.svg is left untouched rather than being replaced with
-# undercounted numbers.
+# No secrets, no PAT, no self-hosted runner: scripts/build_stats.py reads the
+# public https://github.com/users/<login>/contributions endpoint, which needs
+# no authentication and already includes private-repo contributions.
 
 on:
   schedule:
@@ -19,29 +17,23 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
     steps:
       - uses: actions/checkout@v4
-        if: env.STATS_TOKEN != ''
 
       - uses: actions/setup-python@v5
-        if: env.STATS_TOKEN != ''
         with:
           python-version: "3.12"
 
       - name: Render stats.svg
-        if: env.STATS_TOKEN != ''
         env:
-          GH_TOKEN: ${{ secrets.STATS_TOKEN }}
           GH_LOGIN: ${{ github.repository_owner }}
         run: python scripts/build_stats.py
 
       - name: Commit if changed
-        if: env.STATS_TOKEN != ''
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/stats.svg
-          git diff --staged --quiet || git commit -m "chore: refresh contribution stats"
+          git diff --staged --quiet && echo "no change" && exit 0
+          git commit -m "chore: refresh contribution stats"
           git push
